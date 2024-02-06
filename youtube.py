@@ -1,3 +1,4 @@
+#import necessarry files
 from googleapiclient.discovery import build
 import pymongo 
 import mysql.connector
@@ -37,7 +38,7 @@ def get_channel_info(channel_id):
                 Playlist_Id=i['contentDetails']['relatedPlaylists']['uploads'])
         return data
 
-#10 youtube channels 
+#10 youtube channels and their channel_id
 
 #SmarterEveryDay            ===  "UC6107grRI4m0o2-emgoDnAA"
 # Captain Disillusion       ===  "UCEOXxzW2vU0P-0THehuIIeg"   
@@ -178,8 +179,8 @@ def channel_details(channel_id):
     return "upload completed successfully"
 
     
-# table creation for channels, playlists, videos, comments
-# table creation for channels, playlists, videos, comments
+# MYSQL---table creation for channels, playlists, videos, comments
+#channel table
 def channels_table():
     
     mydb = mysql.connector.connect(
@@ -245,7 +246,7 @@ def channels_table():
         cursor.execute(insert_query, values)
         mydb.commit()
 
-
+#playlist table
 
 def playlist_table():
     mydb = mysql.connector.connect(
@@ -311,6 +312,7 @@ def playlist_table():
         cursor.execute(insert_query, values)
         mydb.commit()
 
+#video table
 
 def videos_table():
 
@@ -413,7 +415,7 @@ def videos_table():
         cursor.execute(insert_query, values)
         mydb.commit()
 
-
+#comments table
 
 
 def comments_table():
@@ -481,6 +483,7 @@ def tables():
 
     return "tables created successfully"
 
+#display of tables
 
 def show_channels_table():
     ch_list=[]
@@ -572,7 +575,7 @@ elif show_table=="VIDEOS":
 elif show_table=="COMMENTS":
     show_comments_table()
 
-
+#handling queries
 
 # SQL connection
 mydb = mysql.connector.connect(host="localhost",
