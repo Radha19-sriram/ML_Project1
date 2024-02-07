@@ -641,10 +641,8 @@ elif question=="5.  Which videos have the highest number of likes, and what are 
     df5=pd.DataFrame(result5, columns=["videotitle", "channelname", "likecount"])
     st.write(df5)
 
-elif question=="""6.  What is the total number of likes for each video, and 
-               what are their corresponding video names?""":
+elif question=="6.  What is the total number of likes for each video, and what are their corresponding video names?":
     query6 = """select likes as likecount, title as videotitle from videos"""
-
     cursor.execute(query6)
     
     result6=cursor.fetchall()
@@ -653,11 +651,9 @@ elif question=="""6.  What is the total number of likes for each video, and
     st.write(df6)
     
 
-elif question == """7.  What is the total number of views for each channel, and what are their
-                 corresponding channel names?""":
+elif question == """7.  What is the total number of views for each channel, and what are their corresponding channel names?""":      
     query7 = """SELECT channel_name AS channelname, views AS totalviews FROM channels"""
     cursor.execute(query7)
-    
     result7 = cursor.fetchall()
     df7 = pd.DataFrame(result7, columns=["channel name", "totalviews"])
     st.write(df7)
@@ -674,8 +670,7 @@ elif question == "8.  What are the names of all the channels that have published
 
 
 
-elif question=="""9.  What is the average duration of all videos in each channel, and 
-             what are their corresponding channel names?""":
+elif question=="""9.  What is the average duration of all videos in each channel, and what are their corresponding channel names?""":
     query9="""select channel_name as channelname,AVG(duration) as averageduration from videos groupby channel_name """
     
     cursor.execute(query9)
@@ -693,8 +688,7 @@ elif question=="""9.  What is the average duration of all videos in each channel
     st.write(df)  
 
 
-elif question=="""10. Which videos have the highest number of comments, and what are their 
-                corresponding channel names?""":
+elif question=="""10. Which videos have the highest number of comments, and what are their corresponding channel names?""":
     query10="""select title as videotitle,channel_name as channelname,comments as comments 
                 from videos where comments is not null order by comments desc"""
     cursor.execute(query10)
