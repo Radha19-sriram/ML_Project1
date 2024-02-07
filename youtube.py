@@ -537,11 +537,22 @@ def show_comments_table():
 with st.sidebar:
     st.title(":blue[YOUTUBE DATA HARVESTING AND WAREHOUSING]")
     st.header("SKILL TAKE AWAY")
-    st.caption("Python Scripting")
-    st.caption("Data Collection")
-    st.caption("MongoDB")
-    st.caption("API Integration")
-    st.caption("Data Management Using MongoDB and SQL")
+    st.write("In this project, you will gain proficiency in a range of essential skills:")
+    st.markdown("""
+        <style>
+            .python { background-color: #ffcccb; padding: 10px; border-radius: 5px; }
+            .data-collection { background-color: #c2e0c6; padding: 10px; border-radius: 5px; }
+            .mongodb { background-color: #f0e68c; padding: 10px; border-radius: 5px; }
+            .api { background-color: #afeeee; padding: 10px; border-radius: 5px; }
+            .data-management { background-color: #ffb6c1; padding: 10px; border-radius: 5px; }
+        </style>
+        """, unsafe_allow_html=True)
+    st.markdown("- <div class='python'>**Python Scripting**: Users will harness the power of Python scripting to automate data collection, manipulation, and integration tasks, ensuring efficient and reliable workflows.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='data-collection'>**Data Collection**: Learn effective strategies for collecting data from diverse sources, including web APIs such as the YouTube Data API, ensuring comprehensive access to valuable information.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='mongodb'>**MongoDB**: Dive into MongoDB, a leading NoSQL database solution, and master its usage for storing, organizing, and managing vast volumes of unstructured data with flexibility and scalability.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='api'>**API Integration**: Acquire expertise in integrating with web APIs, enabling seamless communication between your Python scripts and external platforms to retrieve and process real-time data.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='data-management'>**Data Management Using MongoDB and SQL**: Explore the nuances of managing data across different storage systems, from NoSQL databases like MongoDB to relational databases like MySQL, ensuring effective data warehousing and analysis capabilities.</div>", unsafe_allow_html=True)
+    st.write("These skills collectively empower users to architect robust data pipelines, from ingestion to storage to analysis, positioning them as a proficient data engineers capable of handling complex data-centric projects.")
 
 channel_id=st.text_input("Enter the Channel ID")
 
