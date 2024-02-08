@@ -541,7 +541,7 @@ def show_comments_table():
 with st.sidebar:
     st.title(":blue[YOUTUBE DATA HARVESTING AND WAREHOUSING]")
     st.header("SKILL TAKE AWAY")
-    st.write("In this project, you will gain proficiency in a range of essential skills:")
+    st.write("In this project, user will gain proficiency in a range of essential skills:")
     st.markdown("""
         <style>
             .python { background-color: #ffcccb; padding: 10px; border-radius: 5px; }
