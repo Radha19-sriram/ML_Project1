@@ -289,7 +289,7 @@ def tables():
 #display of tables
 
 def zebra_stripe(df):
-        return df.style.apply(lambda x: ['background-color: #f2f2f2' if i % 2 == 0 else '' for i in range(len(x))])
+        return df.style.apply(lambda x: ['background-color: #ACE1AF' if i % 2 == 0 else '' for i in range(len(x))])
 
 
 
@@ -368,32 +368,37 @@ def show_comments_table():
 #streamlit part
 # Function to display About details
 def display_about():
-    st.write("""
-    This is a web application for harvesting and warehousing data from YouTube channels. It allows users to enter a YouTube channel ID, 
-    collect various data such as channel information, playlists, videos, and comments, and store them in a database for further analysis.
-    """)
+    st.markdown("<h1 style='text-align: center; color: #FFD700;'>YOUTUBE DATA HARVESTING AND WAREHOUSING</h1>", unsafe_allow_html=True)
+    st.markdown("""
+    <p style='color:purple;'>This is a web application for harvesting and warehousing data from YouTube channels. It allows users to enter a YouTube channel ID, 
+    collect various data such as channel information, playlists, videos, and comments, and store them in a database for further analysis.</p>
+    """, unsafe_allow_html=True)
+
+    st.header("SKILL TAKE AWAY")
+    st.write("In this project, you will gain proficiency in a range of essential skills:")
+    st.markdown("""
+        <style>
+            .python { background-color: #ffcccb; padding: 10px; border-radius: 5px; }
+            .data-collection { background-color: #c2e0c6; padding: 10px; border-radius: 5px; }
+            .mongodb { background-color: #f0e68c; padding: 10px; border-radius: 5px; }
+            .api { background-color: #afeeee; padding: 10px; border-radius: 5px; }
+            .data-management { background-color: #ffb6c1; padding: 10px; border-radius: 5px; }
+        </style>
+        """, unsafe_allow_html=True)
+    st.markdown("- <div class='python'>**Python Scripting**: Users will harness the power of Python scripting to automate data collection, manipulation, and integration tasks, ensuring efficient and reliable workflows.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='data-collection'>**Data Collection**: Learn effective strategies for collecting data from diverse sources, including web APIs such as the YouTube Data API, ensuring comprehensive access to valuable information.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='mongodb'>**MongoDB**: Dive into MongoDB, a leading NoSQL database solution, and master its usage for storing, organizing, and managing vast volumes of unstructured data with flexibility and scalability.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='api'>**API Integration**: Acquire expertise in integrating with web APIs, enabling seamless communication between your Python scripts and external platforms to retrieve and process real-time data.</div>", unsafe_allow_html=True)
+    st.markdown("- <div class='data-management'>**Data Management Using MongoDB and SQL**: Explore the nuances of managing data across different storage systems, from NoSQL databases like MongoDB to relational databases like MySQL, ensuring effective data warehousing and analysis capabilities.</div>", unsafe_allow_html=True)
+    st.write("These skills collectively empower users to architect robust data pipelines, from ingestion to storage to analysis, positioning them as a proficient data engineers capable of handling complex data-centric projects.")
 
 # Function to display Demo details
 def display_demo():
-    st.write("""
-    This demo provides a simple interface to collect data from YouTube channels using their channel ID. 
-    Users can input the channel ID and click on the 'Collect and Store Data' button to initiate the data collection process.
-    """)
+    st.markdown("""
+    <p style='color:blue;'>This demo provides a simple interface to collect data from YouTube channels using their channel ID. 
+    Users can input the channel ID and click on the 'Collect and Store Data' button to initiate the data collection process.</p>
+    """, unsafe_allow_html=True)
 
-def main():
-    ch_ids = [] 
-   
-    # Apply style to the title to make it bright
-    st.markdown("<h1 style='text-align: center; color: #FFD700;'>YOUTUBE DATA HARVESTING AND WAREHOUSING</h1>", unsafe_allow_html=True)
-
-    
-    # About and Demo buttons
-    if st.button("About"):
-        display_about()
-
-    if st.button("Demo"):
-        display_demo()
-    
     st.write("Here you can enter a YouTube channel ID to collect and store data.")
 
     channel_id = st.text_input("Enter Channel ID")
@@ -768,6 +773,21 @@ def main():
             st.pyplot(fig)
 
 
+
+def main():
+    ch_ids = [] 
+   
+    
+    # Sidebar navigation
+    nav = st.sidebar.radio("My Project", ["About", "Demo"])
+
+    # Display content based on navigation selection
+    if nav == "About":
+        display_about()
+    else:
+        display_demo()
+
+    
 
 
 # Execute the main function
